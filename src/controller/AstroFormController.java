@@ -1,8 +1,6 @@
-
 package controller;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,10 +16,7 @@ import service.AstroCalculator;
 public class AstroFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	LocalDate dob = LocalDate.of(2002, 8, 22);
-	User user1 = new User("FACEPrep","prograd@gmail.com",dob,"Female");
-	AstroCalculator first = new AstroCalculator();
-	String astrosign = first.findSign();
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/entervalues.jsp");
@@ -30,13 +25,19 @@ public class AstroFormController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-/* 
+		
+
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
 		String date=request.getParameter("dob1");
 		String month=request.getParameter("dob2");
 		String year=request.getParameter("dob3");
 		String dob = date+"-"+month+"-"+year;	
+		String email = request.getParameter("email");
+		
+		User user1 = new User(name,email , dob, gender);
+		AstroCalculator first = new AstroCalculator();
+		String astrosign = first.findSign(user1);
 		
 		if(astrosign.equals("Aquarius")){
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
@@ -98,6 +99,6 @@ public class AstroFormController extends HttpServlet {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/Outputview.jsp");
 			request.setAttribute("astro", "<img src='./assets/virgo.svg'>");
 			rd.forward(request, response);
-		}*/
+		}
 	}
 }

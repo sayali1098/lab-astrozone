@@ -1,89 +1,92 @@
 package service;
 
 // Type your code
-import java.time.LocalDate;
 import model.User;
 
 public class AstroCalculator {
 	
-	public String findSign(User) {
-		String sign = "";
+	
+	public String findSign(User user1) {
+		String sign = " ";
+		String[] date = user1.getDob().split("-");
+		int day = Integer.parseInt(date[0]);
+		String month = date[1];
 		
-		if (dob.getMonth == "January") {
-		    if (dob.getDayOfMonth < 20)
+		if (month == "1") {
+		    if (day < 20)
 		       sign = "Capricorn";
 		    else
 		       sign = "Aquarius";
 		 }
-		 else if (dob.getMonth == "February") {
-		    if (dob.getDayOfMonth < 19)
+		 else if (month == "2") {
+		    if (day < 19)
 		       sign = "Aquarius";
 		    else
 		       sign = "Pisces";
 		 }
-		 else if(dob.getMonth == "March") {
-		    if (dob.getDayOfMonth < 21)
+		 else if(month == "3") {
+		    if (day < 21)
 		       sign = "Pisces";
 		    else
 		       sign = "Aries";
 		 }
-		 else if (dob.getMonth == "April") {
-		    if (dob.getDayOfMonth < 20)
+		 else if (month == "4") {
+		    if (day < 20)
 		       sign = "Aries";
 		    else
 		       sign = "Taurus";
 		 }
-		 else if (dob.getMonth == "May") {
-		    if (dob.getDayOfMonth < 21)
+		 else if (month == "5") {
+		    if (day < 21)
 		       sign = "Taurus";
 		    else
 		       sign = "Gemini";
 		 }
-		 else if( dob.getMonth == "June") {
-		    if (dob.getDayOfMonth < 21)
+		 else if( month == "6") {
+		    if (day < 21)
 		       sign = "Gemini";
 		    else
 		       sign = "Cancer";
 		 }
-		 else if (dob.getMonth == "July") {
-		    if (dob.getDayOfMonth < 23)
+		 else if (month == "7") {
+		    if (day < 23)
 		       sign = "Cancer";
 		    else
 		       sign = "Leo";
 		 }
-		 else if( dob.getMonth == "August") {
-		    if (dob.getDayOfMonth < 23)
+		 else if( month == "8") {
+		    if (day < 23)
 		       sign = "Leo";
 		    else
 		       sign = "Virgo";
 		 }
-		 else if (dob.getMonth == "September") {
-		    if (dob.getDayOfMonth < 23)
+		 else if (month == "9") {
+		    if (day < 23)
 		       sign = "Virgo";
 		    else
 		       sign = "Libra";
 		 }
-		 else if (dob.getMonth == "October") {
-		    if (dob.getDayOfMonth < 23)
+		 else if (month == "10") {
+		    if (day < 23)
 		       sign = "Libra";
 		    else
 		       sign = "Scorpio";
 		 }
-		 else if (dob.getMonth == "November") {
-		    if (dob.getDayOfMonth < 22)
+		 else if (month == "11") {
+		    if (day < 22)
 		       sign = "scorpio";
 		    else
 		       sign = "Sagittarius";
 		 }
-		 else if (dob.getMonth == "December") {
-		    if (dob.getDayOfMonth < 22)
+		 else if (month == "12") {
+		    if (day < 22)
 		       sign = "Sagittarius";
 		    else
 		       sign ="Capricorn";
 		 }
-
+		return sign;
 		
 	}	
-	return sign;
+	
 }
 
