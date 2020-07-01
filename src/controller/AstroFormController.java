@@ -2,24 +2,34 @@
 package controller;
 
 import java.io.IOException;
+import java.time.LocalDate;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.User;
+import service.AstroCalculator;
 
 
 @WebServlet(urlPatterns = {"/entervalue"})
 public class AstroFormController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	LocalDate dob = LocalDate.of(2002, 8, 22);
+	User user1 = new User("FACEPrep","prograd@gmail.com",dob,"Female");
+	AstroCalculator first = new AstroCalculator();
+	String astrosign = first.findSign();
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/entervalues.jsp");
 		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 /* 
 		String name=request.getParameter("name");
 		String gender=request.getParameter("gender");
